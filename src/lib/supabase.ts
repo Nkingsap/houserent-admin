@@ -5,7 +5,9 @@ const publishableKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefi
 
 if (!url || !publishableKey) {
   throw new Error(
-    'Missing VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY. Copy .env.example to .env.local and fill it in.',
+    'Missing VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY. Locally: copy .env.example to ' +
+      '.env.local and fill it in. On a host: set both in the project environment variables ' +
+      'and redeploy — Vite inlines them at build time.',
   );
 }
 
